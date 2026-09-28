@@ -7,7 +7,7 @@ interface GoogleAdSenseProps {
 }
 
 export default function GoogleAdSense({ publisherId }: GoogleAdSenseProps) {
-  const pId = publisherId || process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
+  const pId = publisherId || process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || 'ca-pub-6007818041605263';
 
   if (!pId) return null;
 

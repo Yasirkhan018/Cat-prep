@@ -25,8 +25,7 @@ export default function AdBanner({
     }
   }, []);
 
-  const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
-  if (!clientId) return null;
+  const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || 'ca-pub-6007818041605263';
 
   return (
     <div className={`overflow-hidden text-center my-4 ${className}`}>
