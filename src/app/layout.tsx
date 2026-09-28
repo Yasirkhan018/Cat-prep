@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import AppShell from '@/components/layout/AppShell';
 import { ThemeProvider } from '@/lib/theme/ThemeContext';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'CAT 2026 Focused Preparation Workspace',
@@ -28,6 +29,7 @@ export default function RootLayout({
             {children}
           </AppShell>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

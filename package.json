@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.6",
+    "@vercel/analytics": "^2.0.1",
     "caniuse-lite": "^1.0.30001812",
     "katex": "^0.16.11",
     "lucide-react": "^0.453.0",
