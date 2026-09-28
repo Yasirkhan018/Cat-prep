@@ -1,0 +1,196 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>Adaptive CAT Preparation System — Milestone Report</title>
+  <style>
+    body {
+      font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #222;
+      margin: 40px;
+    }
+    h1 {
+      font-size: 20pt;
+      color: #0f172a;
+      border-bottom: 2pt solid #0f172a;
+      padding-bottom: 6pt;
+      margin-bottom: 12pt;
+    }
+    h2 {
+      font-size: 14pt;
+      color: #0f172a;
+      border-bottom: 1pt solid #cbd5e1;
+      padding-bottom: 4pt;
+      margin-top: 18pt;
+      margin-bottom: 8pt;
+    }
+    h3 {
+      font-size: 12pt;
+      color: #334155;
+      margin-top: 14pt;
+      margin-bottom: 6pt;
+    }
+    p, li {
+      font-size: 11pt;
+      color: #334155;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10pt;
+      margin-bottom: 14pt;
+    }
+    th, td {
+      border: 1pt solid #cbd5e1;
+      padding: 6pt 8pt;
+      font-size: 10pt;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      font-weight: bold;
+      color: #0f172a;
+    }
+    .badge {
+      background-color: #e2e8f0;
+      padding: 2pt 5pt;
+      font-weight: bold;
+      border-radius: 3pt;
+      font-size: 9pt;
+    }
+    .callout {
+      background-color: #f8fafc;
+      border-left: 3pt solid #0f172a;
+      padding: 8pt 12pt;
+      margin: 12pt 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Adaptive CAT Preparation System — Milestone Summary Report</h1>
+
+  <table style="border: none; margin-bottom: 16pt;">
+    <tr style="border: none; background: none;">
+      <td style="border: none; width: 50%;"><strong>Repository:</strong> CAT Exam</td>
+      <td style="border: none; width: 50%;"><strong>Status:</strong> Milestones 1–5 Complete &amp; Verified</td>
+    </tr>
+    <tr style="border: none; background: none;">
+      <td style="border: none;"><strong>Platform:</strong> Next.js 14 App Router + TypeScript</td>
+      <td style="border: none;"><strong>Date:</strong> September 28, 2026</td>
+    </tr>
+  </table>
+
+  <div class="callout">
+    <strong>Executive Architecture Summary:</strong><br>
+    The platform has been upgraded from a static question bank into a full adaptive preparation system. The core pedagogical pipeline enforces:
+    <br><br>
+    <em>Teach &rarr; Solved Example &rarr; Guided Try &rarr; Foundation Practice &rarr; Challenge &rarr; CAT-Style Practice &rarr; Authentic PYQ &rarr; Sectionals &rarr; Full Mocks</em>
+  </div>
+
+  <h2>1. Milestone Delivery Status</h2>
+  <table>
+    <tr>
+      <th style="width: 25%;">Milestone</th>
+      <th style="width: 60%;">Accomplishments</th>
+      <th style="width: 15%;">Result</th>
+    </tr>
+    <tr>
+      <td><strong>Milestone 1: Data Isolation</strong></td>
+      <td>
+        • Ingested all 664 authentic CAT PYQs across 10 slot papers (CAT 2021–2024).<br>
+        • Locked immutable data contracts and isolated with <code>sourceType: "CAT_PYQ"</code>.<br>
+        • Preserved original 120-minute 3-section simulator without regressions.
+      </td>
+      <td><strong>100% Passed</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Milestone 2: Diagnostic Assessment</strong></td>
+      <td>
+        • Built 12-question diagnostic test runner (4 VARC, 4 DILR, 4 QA) at <code>/diagnostic</code>.<br>
+        • Deterministic stage scoring: Beginner (&le;4), Intermediate (5–8), Advanced (&ge;9).<br>
+        • Automatic sectional baseline calculation and persistent store updates.
+      </td>
+      <td><strong>100% Passed</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Milestone 3: Original Question Banks</strong></td>
+      <td>
+        • Multi-topic original practice pools across QA, DILR, and VARC with <code>sourceType: "ORIGINAL_PRACTICE"</code>.<br>
+        • Strict 4-tier difficulty progression (Foundation &rarr; Easy &rarr; Moderate &rarr; Intermediate).<br>
+        • Detailed 6-point pedagogical solutions (steps, concept, derivation, common trap, CAT shortcut).
+      </td>
+      <td><strong>100% Passed</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Milestone 4: Adaptive Practice &amp; UI</strong></td>
+      <td>
+        • Adaptive solver at <code>/practice</code> with automatic difficulty tier gating.<br>
+        • Intelligent TITA evaluator normalizing sequences, currency symbols, decimals, and fractions.<br>
+        • 6-stage topic mastery mode at <code>/learn</code> with dynamic progress gauges.<br>
+        • Stage-tailored Home page (<code>/</code>) with Persona Switcher (Beginner/Intermediate/Advanced).
+      </td>
+      <td><strong>100% Passed</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Milestone 5: Verification &amp; Build</strong></td>
+      <td>
+        • TypeScript check: <code>tsc --noEmit</code> completed with 0 errors.<br>
+        • Production build: <code>next build</code> compiled all 21 routes with 0 errors.
+      </td>
+      <td><strong>100% Passed</strong></td>
+    </tr>
+  </table>
+
+  <h2>2. Key Source File Inventory</h2>
+  <table>
+    <tr>
+      <th>File Path</th>
+      <th>Role in Adaptive System</th>
+    </tr>
+    <tr>
+      <td><code>src/lib/types/adaptive.ts</code></td>
+      <td>Data contracts for stages, profiles, tiers, diagnostic outcomes, and solutions.</td>
+    </tr>
+    <tr>
+      <td><code>src/lib/data/diagnosticQuestions.ts</code></td>
+      <td>12 curated diagnostic items with detailed answer keys and explanations.</td>
+    </tr>
+    <tr>
+      <td><code>src/lib/data/originalQuestions/</code></td>
+      <td>Original practice question modules covering QA, DILR, and VARC topics.</td>
+    </tr>
+    <tr>
+      <td><code>src/lib/data/mockDatabase.ts</code></td>
+      <td>Aggregates authentic PYQs and original practice questions with strict source separation.</td>
+    </tr>
+    <tr>
+      <td><code>src/lib/store/appStore.ts</code></td>
+      <td>Zustand store handling adaptive profile, accuracy tracking, velocity, and stage transitions.</td>
+    </tr>
+    <tr>
+      <td><code>src/app/diagnostic/page.tsx</code></td>
+      <td>Diagnostic test runner, timer, scoring engine, and personalized placement report.</td>
+    </tr>
+    <tr>
+      <td><code>src/app/practice/page.tsx</code></td>
+      <td>Adaptive question solver with attempt logging, pacing stats, and mistake analysis.</td>
+    </tr>
+    <tr>
+      <td><code>src/app/learn/page.tsx</code></td>
+      <td>6-stage topic mastery journey with progressive concept challenges.</td>
+    </tr>
+    <tr>
+      <td><code>src/app/page.tsx</code></td>
+      <td>Adaptive dashboard rendering tailored pathways and developer persona testing switcher.</td>
+    </tr>
+  </table>
+
+  <h2>3. Live Preview &amp; Verification</h2>
+  <p>
+    The local development server is active and accessible at <strong>http://localhost:3000</strong>. Users can immediately test all features including the 12-question diagnostic test, 6-stage learning modules, adaptive practice drills, and the stage switcher.
+  </p>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adaptive CAT Preparation System — Executive Milestone Report</title>
+  <style>
+    @media print {
+      body { font-size: 11pt; line-height: 1.4; color: #111; margin: 0; padding: 20mm; }
+      .no-print { display: none; }
+      .page-break { page-break-before: always; }
+      table { page-break-inside: avoid; }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 24px;
+      background-color: #ffffff;
+    }
+    .header-bar {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.5px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 12px;
+    }
+    .meta-grid div strong {
+      color: #334155;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #e2e8f0;
+    }
+    .badge-success {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: #a7f3d0;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    p, li {
+      font-size: 14px;
+      color: #334155;
+    }
+    ul {
+      margin: 6px 0 16px 20px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 13px;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f8fafc;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    tr:nth-child(even) {
+      background-color: #fbfcfe;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      background: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .callout {
+      background: #f8fafc;
+      border-left: 4px solid #0f172a;
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 0 6px 6px 0;
+      font-size: 13px;
+    }
+    .btn-print {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #0f172a;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    }
+    .btn-print:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn-print no-print" onclick="window.print()">Print / Save as PDF</button>
+
+  <div class="header-bar">
+    <h1>Adaptive CAT Preparation System</h1>
+    <div style="font-size: 15px; font-weight: 500; color: #475569;">Executive Milestone Summary Report (Milestones 1 to 5)</div>
+    <div class="meta-grid">
+      <div><strong>Status:</strong> <span class="badge badge-success">Completed & Verified</span></div>
+      <div><strong>Date:</strong> September 28, 2026</div>
+      <div><strong>Platform:</strong> Next.js 14 (App Router) + TypeScript + Tailwind CSS</div>
+      <div><strong>Build Health:</strong> 21/21 Routes Static/Dynamic, 0 TypeScript Errors</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Core Architectural Principle:</strong> A structured, intelligent learning path ensures aspirants are never prematurely subjected to high-intensity authentic CAT PYQs without prior foundational training and mastery progression:
+    <div style="margin-top: 8px; font-weight: 600; color: #0f172a;">
+      Teach &rarr; Solved Example &rarr; Guided Try &rarr; Practice &rarr; Challenge &rarr; CAT-Style Practice &rarr; Authentic PYQ &rarr; Sectional &rarr; Full Mock
+    </div>
+  </div>
+
+  <h2>1. Milestone Overview & Delivery Status</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Milestone</th>
+        <th style="width: 55%;">Key Deliverables</th>
+        <th style="width: 20%;">Verification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>M1: Data Isolation & Contracts</strong></td>
+        <td>
+          • Preserved all 664 authentic CAT PYQs across 10 slot papers.<br>
+          • Strict discriminated union: <code>sourceType: "CAT_PYQ"</code> vs <code>"ORIGINAL_PRACTICE"</code>.<br>
+          • Core interface contracts: <code>AdaptiveProfile</code>, <code>Stage</code>, <code>DifficultyTier</code>.
+        </td>
+        <td><span class="badge badge-success">100% Passed</span></td>
+      </tr>
+      <tr>
+        <td><strong>M2: Diagnostic Assessment</strong></td>
+        <td>
+          • 12-question calibrated test runner at <code>/diagnostic</code> (4 VARC, 4 DILR, 4 QA).<br>
+          • Deterministic stage scoring: Beginner (&le;4), Intermediate (5–8), Advanced (&ge;9).<br>
+          • Section baseline calculations, velocity tracking, and zero fake stats for new users.
+        </td>
+        <td><span class="badge badge-success">100% Passed</span></td>
+      </tr>
+      <tr>
+        <td><strong>M3: Original Question Banks</strong></td>
+        <td>
+          • Original practice pools across QA, DILR, and VARC with progressive difficulty.<br>
+          • Multi-step solutions: concept derivation, why it works, traps, and CAT speed tips.
+        </td>
+        <td><span class="badge badge-success">100% Passed</span></td>
+      </tr>
+      <tr>
+        <td><strong>M4: Adaptive Practice & UI</strong></td>
+        <td>
+          • Adaptive solver at <code>/practice</code> with dynamic difficulty adjustment and TITA parsing.<br>
+          • 6-stage topic mastery journey at <code>/learn</code> with dynamic mastery gauges.<br>
+          • Adaptive Home dashboard (<code>/</code>) with Persona Switcher (Beginner / Intermediate / Advanced).
+        </td>
+        <td><span class="badge badge-success">100% Passed</span></td>
+      </tr>
+      <tr>
+        <td><strong>M5: Full Verification</strong></td>
+        <td>
+          • <code>tsc --noEmit</code> completed with 0 errors.<br>
+          • Production build <code>next build</code> compiled all 21 pages successfully.
+        </td>
+        <td><span class="badge badge-success">100% Passed</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Architectural Highlights</h2>
+
+  <h3>A. 12-Question Diagnostic Assessment</h3>
+  <ul>
+    <li><strong>VARC (4 Questions):</strong> Evaluates main idea extraction, argument weakening, sentence sequence (TITA), and paragraph summary.</li>
+    <li><strong>DILR (4 Questions):</strong> Tests linear arrangement constraints, multi-attribute matrix matching, set theory inclusion-exclusion (TITA), and quarterly revenue tables.</li>
+    <li><strong>QA (4 Questions):</strong> Benchmarks profit markup multipliers, work efficiency rates (TITA), quadratic discriminant roots, and right-triangle incircles.</li>
+  </ul>
+
+  <h3>B. Adaptive Persona Differentiation</h3>
+  <ul>
+    <li><strong>Beginner Track:</strong> Promotes foundational arithmetic and reading skills. Step-by-step 4-phase learning journey (Learn &rarr; Example &rarr; Guided Try &rarr; 10 Practice Qs). Mocks and full PYQ papers are discreetly deprioritized to avoid cognitive overload.</li>
+    <li><strong>Intermediate Track:</strong> Focuses on moderate-level problem sets, pacing targets, weak-area drills, and selective past-year CAT slot questions.</li>
+    <li><strong>Advanced Track:</strong> Prioritizes full 120-minute slot simulations, high-complexity DILR matrix sets, and negative marking elimination strategies.</li>
+    <li><strong>Flow & Persona Switcher:</strong> A dedicated toolbar at the bottom of the home screen allows instantaneous switching between Beginner, Intermediate, Advanced, and Diagnostic Reset.</li>
+  </ul>
+
+  <h3>C. Intelligent Practice Engine & Solution Quality</h3>
+  <ul>
+    <li><strong>TITA Answer Normalizer:</strong> Correctly recognizes equivalent mathematical forms such as sequences (<code>3421</code> vs <code>3-4-2-1</code>), formatted currency (<code>₹4000</code> vs <code>4000</code>), decimals (<code>2.5</code> vs <code>2.50</code>), and fractions (<code>5/2</code>).</li>
+    <li><strong>Pedagogical Multi-step Solutions:</strong> Eliminates terse one-line answers. Every question provides the formula, underlying theoretical explanation, common student pitfalls, and speed heuristics.</li>
+  </ul>
+
+  <h2>3. Key Source File Map</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>File Path</th>
+        <th>Function / Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>src/lib/types/adaptive.ts</code></td>
+        <td>Interface contracts for adaptive profiles, stages, tiers, and solutions.</td>
+      </tr>
+      <tr>
+        <td><code>src/lib/data/diagnosticQuestions.ts</code></td>
+        <td>12 curated diagnostic questions with step-by-step answer keys.</td>
+      </tr>
+      <tr>
+        <td><code>src/lib/data/originalQuestions/</code></td>
+        <td>Original practice question banks for QA, DILR, and VARC.</td>
+      </tr>
+      <tr>
+        <td><code>src/lib/data/mockDatabase.ts</code></td>
+        <td>Master aggregator isolating authentic PYQs and original questions.</td>
+      </tr>
+      <tr>
+        <td><code>src/lib/store/appStore.ts</code></td>
+        <td>Zustand & localStorage state handling adaptive scores and stage transitions.</td>
+      </tr>
+      <tr>
+        <td><code>src/app/diagnostic/page.tsx</code></td>
+        <td>Diagnostic test runner, real-time timer, and result placement dashboard.</td>
+      </tr>
+      <tr>
+        <td><code>src/app/practice/page.tsx</code></td>
+        <td>Adaptive practice interface with attempt logging and performance gating.</td>
+      </tr>
+      <tr>
+        <td><code>src/app/learn/page.tsx</code></td>
+        <td>6-stage topic mastery module with progressive concept challenges.</td>
+      </tr>
+      <tr>
+        <td><code>src/app/page.tsx</code></td>
+        <td>Stage-adaptive workspace with dynamic syllabus cards and persona switcher.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 40px; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 12px; color: #94a3b8; text-align: center;">
+    Adaptive CAT Preparation Workspace &bull; Verification Completed Successfully
+  </div>
+
+</body>
+</html>

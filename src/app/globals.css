@@ -1,0 +1,167 @@
+@import 'katex/dist/katex.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================================================== */
+/* THEME DEFINITIONS: 1. LIGHT  |  2. DARK  |  3. BEIGE & BLACK           */
+/* ===================================================================== */
+
+/* 1. LIGHT THEME (Crisp Modern Workspace) */
+:root,
+[data-theme="light"] {
+  --cat-bg: #F8F9FA;
+  --cat-card: #FFFFFF;
+  --cat-card-subtle: #F1F3F5;
+  --cat-hover: #E9ECEF;
+  --cat-border: #E5E7EB;
+  --cat-border-strong: #D1D5DB;
+  --cat-ink: #0F172A;
+  --cat-muted: #64748B;
+  --cat-faint: #94A3B8;
+  --cat-primary: #0F172A;
+  --cat-primary-hover: #1E293B;
+  --cat-primary-text: #FFFFFF;
+  --background: var(--cat-bg);
+  --foreground: var(--cat-ink);
+}
+
+/* 2. DARK THEME (Deep Calm Obsidian Workspace) */
+[data-theme="dark"] {
+  --cat-bg: #09090B;
+  --cat-card: #141416;
+  --cat-card-subtle: #1C1C20;
+  --cat-hover: #27272A;
+  --cat-border: #27272A;
+  --cat-border-strong: #3F3F46;
+  --cat-ink: #F4F4F5;
+  --cat-muted: #A1A1AA;
+  --cat-faint: #71717A;
+  --cat-primary: #F4F4F5;
+  --cat-primary-hover: #E4E4E7;
+  --cat-primary-text: #09090B;
+  --background: var(--cat-bg);
+  --foreground: var(--cat-ink);
+}
+
+/* 3. BEIGE & BLACK THEME (Warm Editorial / Paper Workspace) */
+[data-theme="beige"] {
+  --cat-bg: #F4EFE6;
+  --cat-card: #FCFBF9;
+  --cat-card-subtle: #EDE7DC;
+  --cat-hover: #E5DFD1;
+  --cat-border: #DDD6C8;
+  --cat-border-strong: #C8C0AF;
+  --cat-ink: #1C1917;
+  --cat-muted: #6E675F;
+  --cat-faint: #9E978D;
+  --cat-primary: #1C1917;
+  --cat-primary-hover: #292524;
+  --cat-primary-text: #F4EFE6;
+  --background: var(--cat-bg);
+  --foreground: var(--cat-ink);
+}
+
+body {
+  background-color: var(--cat-bg);
+  color: var(--cat-ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Smooth theme transition on common surfaces */
+aside, header, nav, main, article, section, button, input {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.15s ease;
+}
+
+/* Global adaptation rules so existing zinc/white utilities harmonize with current theme */
+[data-theme="dark"] .bg-white {
+  background-color: var(--cat-card) !important;
+}
+[data-theme="dark"] .bg-zinc-50,
+[data-theme="dark"] .bg-zinc-100 {
+  background-color: var(--cat-card-subtle) !important;
+}
+[data-theme="dark"] .text-zinc-900,
+[data-theme="dark"] .text-zinc-800,
+[data-theme="dark"] .text-zinc-700 {
+  color: var(--cat-ink) !important;
+}
+[data-theme="dark"] .text-zinc-500,
+[data-theme="dark"] .text-zinc-600 {
+  color: var(--cat-muted) !important;
+}
+[data-theme="dark"] .border-zinc-200,
+[data-theme="dark"] .border-zinc-300 {
+  border-color: var(--cat-border) !important;
+}
+[data-theme="dark"] .bg-zinc-900 {
+  background-color: var(--cat-primary) !important;
+  color: var(--cat-primary-text) !important;
+}
+[data-theme="dark"] .bg-zinc-900:hover {
+  background-color: var(--cat-primary-hover) !important;
+}
+[data-theme="dark"] .hover\:bg-zinc-100:hover,
+[data-theme="dark"] .hover\:bg-zinc-50:hover,
+[data-theme="dark"] .hover\:bg-zinc-200:hover {
+  background-color: var(--cat-hover) !important;
+}
+
+[data-theme="beige"] .bg-white {
+  background-color: var(--cat-card) !important;
+}
+[data-theme="beige"] .bg-zinc-50,
+[data-theme="beige"] .bg-zinc-100 {
+  background-color: var(--cat-card-subtle) !important;
+}
+[data-theme="beige"] .text-zinc-900,
+[data-theme="beige"] .text-zinc-800,
+[data-theme="beige"] .text-zinc-700 {
+  color: var(--cat-ink) !important;
+}
+[data-theme="beige"] .text-zinc-500,
+[data-theme="beige"] .text-zinc-600 {
+  color: var(--cat-muted) !important;
+}
+[data-theme="beige"] .border-zinc-200,
+[data-theme="beige"] .border-zinc-300 {
+  border-color: var(--cat-border) !important;
+}
+[data-theme="beige"] .bg-zinc-900 {
+  background-color: var(--cat-primary) !important;
+  color: var(--cat-primary-text) !important;
+}
+[data-theme="beige"] .bg-zinc-900:hover {
+  background-color: var(--cat-primary-hover) !important;
+}
+[data-theme="beige"] .hover\:bg-zinc-100:hover,
+[data-theme="beige"] .hover\:bg-zinc-50:hover,
+[data-theme="beige"] .hover\:bg-zinc-200:hover {
+  background-color: var(--cat-hover) !important;
+}
+
+/* Subtle, unobtrusive scrollbar matching theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cat-border-strong);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cat-faint);
+}
+
+/* Text Selection highlight */
+::selection {
+  background-color: var(--cat-ink);
+  color: var(--cat-bg);
+}
