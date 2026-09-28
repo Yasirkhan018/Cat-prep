@@ -3,6 +3,8 @@ import './globals.css';
 import AppShell from '@/components/layout/AppShell';
 import { ThemeProvider } from '@/lib/theme/ThemeContext';
 import { Analytics } from '@vercel/analytics/react';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+import GoogleAdSense from '@/components/ads/GoogleAdSense';
 
 export const metadata: Metadata = {
   title: 'CAT 2026 Focused Preparation Workspace',
@@ -22,6 +24,7 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('cat_prep_theme')||'beige';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','beige');}})();`,
           }}
         />
+        <GoogleAdSense />
       </head>
       <body className="bg-cat-bg text-cat-ink min-h-screen antialiased">
         <ThemeProvider>
@@ -30,6 +33,7 @@ export default function RootLayout({
           </AppShell>
         </ThemeProvider>
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   );
