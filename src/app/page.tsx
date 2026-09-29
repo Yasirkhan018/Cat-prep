@@ -305,6 +305,35 @@ export default function PreparationHomePage() {
         </div>
       </section>
 
+      {/* Telegram Community CTA Banner */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#229ED9]/15 via-blue-500/10 to-indigo-500/10 border border-[#229ED9]/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-subtle">
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-[#229ED9] text-white flex items-center justify-center shrink-0 shadow-sm">
+            <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-bold text-cat-ink flex items-center gap-2">
+              <span>Join CAT Prep Aspirants on Telegram</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#229ED9]/20 text-[#229ED9] font-bold">@catprepos</span>
+            </h4>
+            <p className="text-[11px] sm:text-xs text-cat-sub">
+              Daily CAT question drills, PYQ discussion, peer doubt solving & exam strategy updates.
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://t.me/catprepos"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full sm:w-auto px-4 py-2 rounded-xl bg-[#229ED9] hover:bg-[#1E88E5] text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm shrink-0"
+        >
+          <span>Join Community</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </a>
+      </div>
+
       {/* Reference & Revision Tools */}
       <section className="space-y-3 pt-2">
         <h3 className="text-sm font-semibold text-cat-ink border-b border-cat-border pb-3">
@@ -362,8 +391,19 @@ export default function PreparationHomePage() {
       <AdBanner slot="6820469844" />
 
       {/* Footer */}
-      <footer className="pt-8 border-t border-cat-border text-center text-xs text-cat-sub">
+      <footer className="pt-8 border-t border-cat-border text-center text-xs text-cat-sub space-y-2">
         <p>© 2026 CAT Prep OS • Intelligent Adaptive CAT Preparation System</p>
+        <p>
+          <a
+            href="https://t.me/catprepos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#229ED9] hover:underline font-medium inline-flex items-center gap-1"
+          >
+            <span>Join our Telegram Community (@catprepos)</span>
+            <ArrowRight className="w-3 h-3" />
+          </a>
+        </p>
       </footer>
 
     </div>
