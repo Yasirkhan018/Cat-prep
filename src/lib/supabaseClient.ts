@@ -36,7 +36,7 @@ export async function signInWithOtp(email: string) {
     return { data: null, error: new Error('Supabase credentials are not configured.') };
   }
 
-  const redirectUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : undefined;
+  const redirectUrl = typeof window !== 'undefined' ? `${window.location.origin}/auth/callback` : undefined;
 
   return await supabase.auth.signInWithOtp({
     email,
@@ -70,7 +70,7 @@ export async function signInWithGoogle() {
     return { data: null, error: new Error('Supabase credentials are not configured.') };
   }
 
-  const redirectUrl = typeof window !== 'undefined' ? `${window.location.origin}/` : undefined;
+  const redirectUrl = typeof window !== 'undefined' ? `${window.location.origin}/auth/callback` : undefined;
 
   return await supabase.auth.signInWithOAuth({
     provider: 'google',
