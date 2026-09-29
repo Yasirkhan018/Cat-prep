@@ -21,6 +21,7 @@ import {
   setAdaptiveStage
 } from '@/lib/store/appStore';
 import { UserAppState, DailyFocusPlan, Stage } from '@/lib/types';
+import AdBanner from '@/components/ads/AdBanner';
 
 export default function PreparationHomePage() {
   const router = useRouter();
@@ -356,6 +357,9 @@ export default function PreparationHomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Sponsored Ad Unit */}
+      <AdBanner slot="6820469844" />
 
       {/* Footer */}
       <footer className="pt-8 border-t border-cat-border text-center text-xs text-cat-sub">

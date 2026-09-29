@@ -32,6 +32,7 @@ import {
   getTopicDifficulty
 } from '@/lib/store/appStore';
 import MathText from '@/components/common/MathText';
+import AdBanner from '@/components/ads/AdBanner';
 
 function checkAnswerEquivalence(userAns: string, correctAns: string): boolean {
   if (!userAns || !correctAns) return false;
@@ -892,6 +893,9 @@ function PracticeContent() {
         )}
 
       </div>
+
+      {/* Sponsored Ad Unit */}
+      <AdBanner slot="6820469844" />
 
       {/* Completion Modal */}
       {showCompletionModal && (

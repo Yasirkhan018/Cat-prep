@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { RotateCcw, Check, Zap } from 'lucide-react';
 import { FORMULAS_DB } from '@/lib/data/mockDatabase';
 import MathText from '@/components/common/MathText';
+import AdBanner from '@/components/ads/AdBanner';
 
 export default function FormulaBookPage() {
   const [flashIndex, setFlashIndex] = useState(0);
@@ -86,6 +87,9 @@ export default function FormulaBookPage() {
           </button>
         </div>
       </section>
+
+      {/* Sponsored Ad Unit */}
+      <AdBanner slot="6820469844" />
 
       {/* Catalog Grid */}
       <section className="space-y-3 pt-4">
