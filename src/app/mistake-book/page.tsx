@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { QUESTIONS_DB } from '@/lib/data/mockDatabase';
 import MathText from '@/components/common/MathText';
+import { InArticleAd } from '@/components/ads/AdBanner';
 
 export default function MistakeBookPage() {
   const [filterReason, setFilterReason] = useState<string>('All');
@@ -167,6 +168,9 @@ export default function MistakeBookPage() {
           ))
         )}
       </div>
+
+      {/* In-Article Sponsored Ad */}
+      <InArticleAd slot="5431366558" />
 
     </div>
   );

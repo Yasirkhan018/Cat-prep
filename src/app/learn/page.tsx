@@ -23,6 +23,7 @@ import { getAdaptiveProfile, getTopicMastery, getTopicDifficulty } from '@/lib/s
 import { AdaptiveProfile, Stage, SectionType } from '@/lib/types/adaptive';
 import { ORIGINAL_PRACTICE_QUESTIONS } from '@/lib/data/mockDatabase';
 import MathText from '@/components/common/MathText';
+import { InArticleAd } from '@/components/ads/AdBanner';
 
 interface LearnTopic {
   id: string;
@@ -341,6 +342,9 @@ export default function LearnOSPage() {
                 {currentTopic.trapAlert}
               </p>
             </div>
+
+            {/* In-Article Sponsored Ad */}
+            <InArticleAd slot="5431366558" />
 
             <div className="pt-2 flex justify-end">
               <button

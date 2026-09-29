@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Calendar, Target, Clock, ArrowRight } from 'lucide-react';
+import { InArticleAd } from '@/components/ads/AdBanner';
 
 export default function StudyPlanPage() {
   const [examDate, setExamDate] = useState('2026-11-29');
@@ -104,6 +105,9 @@ export default function StudyPlanPage() {
           </div>
         </div>
       </section>
+
+      {/* In-Article Sponsored Ad */}
+      <InArticleAd slot="5431366558" />
 
       {/* Structured Roadmap */}
       <section className="space-y-3">

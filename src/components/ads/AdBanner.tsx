@@ -5,15 +5,21 @@ import React, { useEffect, useRef } from 'react';
 interface AdBannerProps {
   slot?: string;
   format?: 'auto' | 'fluid' | 'rectangle';
+  layout?: string;
+  layoutKey?: string;
   responsive?: boolean;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export default function AdBanner({
   slot = '6820469844',
   format = 'auto',
   responsive = true,
+  layout,
+  layoutKey,
   className = '',
+  style,
 }: AdBannerProps) {
   const adRef = useRef<HTMLModElement | null>(null);
 
@@ -45,12 +51,32 @@ export default function AdBanner({
       <ins
         ref={adRef}
         className="adsbygoogle"
-        style={{ display: 'block', minWidth: '250px' }}
+        style={style || { display: 'block', minWidth: '250px' }}
         data-ad-client={clientId}
         data-ad-slot={slot}
         data-ad-format={format}
-        data-full-width-responsive={responsive ? 'true' : 'false'}
+        {...(layout ? { 'data-ad-layout': layout } : {})}
+        {...(layoutKey ? { 'data-ad-layout-key': layoutKey } : {})}
+        {...(responsive !== undefined && !layout ? { 'data-full-width-responsive': responsive ? 'true' : 'false' } : {})}
       />
     </div>
+  );
+}
+
+export function InArticleAd({
+  slot = '5431366558',
+  className = '',
+}: {
+  slot?: string;
+  className?: string;
+}) {
+  return (
+    <AdBanner
+      slot={slot}
+      format="fluid"
+      layout="in-article"
+      style={{ display: 'block', textAlign: 'center', width: '100%' }}
+      className={`my-6 ${className}`}
+    />
   );
 }
